@@ -51,12 +51,12 @@ const ZeldaFeatureGrid = () => {
     { name: "Bombs", key: "bombs", category: "items", emoji: "💣" },
     { name: "Instrument", key: "instrument", category: "items", emoji: "🪉" },
     { name: "Moblins", key: "moblins", category: "enemies", emoji: "🧌" },
-    { name: "Monster Parts", key: "monsterParts", category: "enemies", emoji: "🫁" },
     { name: "Flying Tiles", key: "flyingTiles", category: "enemies", emoji: "🧱" },
     { name: "Shadow Link", key: "shadowLink", category: "enemies", emoji: "👤" },
     { name: "Lynels", key: "lynels", category: "enemies", emoji: "🦁" },
     { name: "Cooking", key: "cooking", category: "mechanics", emoji: "🍳" },
     { name: "Horse", key: "horse", category: "mechanics", emoji: "🐴" },
+    { name: "Monster Parts", key: "monsterParts", category: "mechanics", emoji: "🫁" },
     { name: "Fishing", key: "fishing", category: "mechanics", emoji: "🎣" },
     { name: "Sleep/Rest", key: "sleeping", category: "mechanics", emoji: "🛌" },
     { name: "Quest Chain", key: "questChain", category: "mechanics", emoji: "📜" },
@@ -278,7 +278,11 @@ const ZeldaFeatureGrid = () => {
                       fontSize: '13px'
                     }}
                   >
-                    <span style={{ fontSize: '24px', marginRight: '3px' }}>{feature.emoji}</span>
+                    <span style={{ 
+                      fontSize: '24px', 
+                      marginRight: '3px',
+                      filter: feature.key === 'shadowLink' ? 'brightness(0)' : undefined,
+                    }}>{feature.emoji}</span>
                     {feature.name}
                   </div>
                 </th>
@@ -311,7 +315,13 @@ const ZeldaFeatureGrid = () => {
                         }}
                       >
                         {hasFeature ? (
-                          <div className="w-7 h-7 mx-auto flex items-center justify-center" style={{ fontSize: '24px' }}>
+                          <div 
+                            className="w-7 h-7 mx-auto flex items-center justify-center" 
+                            style={{ 
+                              fontSize: '24px',
+                              filter: feature.key === 'shadowLink' ? 'brightness(0)' : undefined,
+                            }}
+                          >
                             {feature.emoji}
                           </div>
                         ) : (
