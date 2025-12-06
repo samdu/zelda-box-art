@@ -185,17 +185,17 @@ const ZeldaFeatureGrid = () => {
   // Render game row label with title art only + custom tooltip
   const GameLabel = ({ game }) => (
     <div 
-      className="cursor-pointer"
+      className="cursor-pointer inline-block"
       onMouseEnter={(e) => showTooltip(e, game)}
       onMouseLeave={hideTooltip}
     >
       <img 
         src={game.titleArt}
         alt={game.name}
-        className="rounded"
+        className="rounded block"
         style={{ 
-          width: '88px', 
-          height: '36px',
+          width: '128px', 
+          height: '48px',
           objectFit: 'contain',
         }}
       />
@@ -232,7 +232,7 @@ const ZeldaFeatureGrid = () => {
         <table className="w-full border-collapse text-xs rounded" style={{ marginTop: '70px' }}>
           <thead>
             <tr>
-              <th className="sticky left-0 bg-green-900 z-10 p-1.5 text-left text-amber-300 font-bold min-w-[100px] border-b border-green-600">
+              <th className="sticky left-0 bg-green-900 z-10 p-1.5 text-left text-amber-300 font-bold border-b border-green-600 whitespace-nowrap" style={{ width: '136px' }}>
                 Game
               </th>
               {features.map((feature, idx) => (
