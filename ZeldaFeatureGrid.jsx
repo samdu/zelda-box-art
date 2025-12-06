@@ -1,26 +1,47 @@
+import { useState } from 'react';
+
 const ZeldaFeatureGrid = () => {
-  // Games with their box art and title art
-  // boxArt: retail box cover, titleArt: game logo
+  // Games with box art, title art, and release info
+  // releases: array of { year, system } - original + remakes/remasters only (no Virtual Console)
   const games = [
-    { name: "The Legend of Zelda", year: 1986, abbr: "LoZ", boxArt: "box-art/01-LoZ.jpg", titleArt: "title-art/01-LoZ.jpg" },
-    { name: "Zelda II: Adventure of Link", year: 1987, abbr: "AoL", boxArt: "box-art/02-AoL.jpg", titleArt: "title-art/02-AoL.jpg" },
-    { name: "A Link to the Past", year: 1991, abbr: "ALttP", boxArt: "box-art/03-ALttP.jpg", titleArt: "title-art/03-ALttP.jpg" },
-    { name: "Link's Awakening", year: 1993, abbr: "LA", boxArt: "box-art/04-LA.jpg", titleArt: "title-art/04-LA.jpg" },
-    { name: "Ocarina of Time", year: 1998, abbr: "OoT", boxArt: "box-art/05-OoT.jpg", titleArt: "title-art/05-OoT.jpg" },
-    { name: "Majora's Mask", year: 2000, abbr: "MM", boxArt: "box-art/06-MM.jpg", titleArt: "title-art/06-MM.jpg" },
-    { name: "Oracle of Seasons", year: 2001, abbr: "OoS", boxArt: "box-art/07-OoS.jpg", titleArt: "title-art/07-OoS.jpg" },
-    { name: "Oracle of Ages", year: 2001, abbr: "OoA", boxArt: "box-art/08-OoA.jpg", titleArt: "title-art/08-OoA.jpg" },
-    { name: "The Wind Waker", year: 2002, abbr: "WW", boxArt: "box-art/09-WW.jpg", titleArt: "title-art/09-WW.jpg" },
-    { name: "Four Swords Adventures", year: 2004, abbr: "FSA", boxArt: "box-art/10-FSA.jpg", titleArt: "title-art/10-FSA.jpg" },
-    { name: "The Minish Cap", year: 2004, abbr: "MC", boxArt: "box-art/11-MC.jpg", titleArt: "title-art/11-MC.jpg" },
-    { name: "Twilight Princess", year: 2006, abbr: "TP", boxArt: "box-art/12-TP.jpg", titleArt: "title-art/12-TP.jpg" },
-    { name: "Phantom Hourglass", year: 2007, abbr: "PH", boxArt: "box-art/13-PH.jpg", titleArt: "title-art/13-PH.jpg" },
-    { name: "Spirit Tracks", year: 2009, abbr: "ST", boxArt: "box-art/14-ST.jpg", titleArt: "title-art/14-ST.jpg" },
-    { name: "Skyward Sword", year: 2011, abbr: "SS", boxArt: "box-art/15-SS.jpg", titleArt: "title-art/15-SS.jpg" },
-    { name: "A Link Between Worlds", year: 2013, abbr: "ALBW", boxArt: "box-art/16-ALBW.jpg", titleArt: "title-art/16-ALBW.jpg" },
-    { name: "Breath of the Wild", year: 2017, abbr: "BotW", boxArt: "box-art/17-BotW.jpg", titleArt: "title-art/17-BotW.jpg" },
-    { name: "Tears of the Kingdom", year: 2023, abbr: "TotK", boxArt: "box-art/18-TotK.jpg", titleArt: "title-art/18-TotK.jpg" },
-    { name: "Echoes of Wisdom", year: 2024, abbr: "EoW", boxArt: "box-art/19-EoW.jpg", titleArt: "title-art/19-EoW.jpg" },
+    { name: "The Legend of Zelda", abbr: "LoZ", boxArt: "box-art/01-LoZ.jpg", titleArt: "title-art/01-LoZ.jpg",
+      releases: [{ year: 1986, system: "NES" }] },
+    { name: "Zelda II: The Adventure of Link", abbr: "AoL", boxArt: "box-art/02-AoL.jpg", titleArt: "title-art/02-AoL.jpg",
+      releases: [{ year: 1987, system: "NES" }] },
+    { name: "A Link to the Past", abbr: "ALttP", boxArt: "box-art/03-ALttP.jpg", titleArt: "title-art/03-ALttP.jpg",
+      releases: [{ year: 1991, system: "SNES" }, { year: 2002, system: "GBA" }] },
+    { name: "Link's Awakening", abbr: "LA", boxArt: "box-art/04-LA.jpg", titleArt: "title-art/04-LA.jpg",
+      releases: [{ year: 1993, system: "Game Boy" }, { year: 1998, system: "GBC (DX)" }, { year: 2019, system: "Switch" }] },
+    { name: "Ocarina of Time", abbr: "OoT", boxArt: "box-art/05-OoT.jpg", titleArt: "title-art/05-OoT.jpg",
+      releases: [{ year: 1998, system: "N64" }, { year: 2011, system: "3DS" }] },
+    { name: "Majora's Mask", abbr: "MM", boxArt: "box-art/06-MM.jpg", titleArt: "title-art/06-MM.jpg",
+      releases: [{ year: 2000, system: "N64" }, { year: 2015, system: "3DS" }] },
+    { name: "Oracle of Seasons", abbr: "OoS", boxArt: "box-art/07-OoS.jpg", titleArt: "title-art/07-OoS.jpg",
+      releases: [{ year: 2001, system: "GBC" }] },
+    { name: "Oracle of Ages", abbr: "OoA", boxArt: "box-art/08-OoA.jpg", titleArt: "title-art/08-OoA.jpg",
+      releases: [{ year: 2001, system: "GBC" }] },
+    { name: "The Wind Waker", abbr: "WW", boxArt: "box-art/09-WW.jpg", titleArt: "title-art/09-WW.jpg",
+      releases: [{ year: 2002, system: "GameCube" }, { year: 2013, system: "Wii U HD" }] },
+    { name: "Four Swords Adventures", abbr: "FSA", boxArt: "box-art/10-FSA.jpg", titleArt: "title-art/10-FSA.jpg",
+      releases: [{ year: 2004, system: "GameCube" }] },
+    { name: "The Minish Cap", abbr: "MC", boxArt: "box-art/11-MC.jpg", titleArt: "title-art/11-MC.jpg",
+      releases: [{ year: 2004, system: "GBA" }] },
+    { name: "Twilight Princess", abbr: "TP", boxArt: "box-art/12-TP.jpg", titleArt: "title-art/12-TP.jpg",
+      releases: [{ year: 2006, system: "GameCube/Wii" }, { year: 2016, system: "Wii U HD" }] },
+    { name: "Phantom Hourglass", abbr: "PH", boxArt: "box-art/13-PH.jpg", titleArt: "title-art/13-PH.jpg",
+      releases: [{ year: 2007, system: "DS" }] },
+    { name: "Spirit Tracks", abbr: "ST", boxArt: "box-art/14-ST.jpg", titleArt: "title-art/14-ST.jpg",
+      releases: [{ year: 2009, system: "DS" }] },
+    { name: "Skyward Sword", abbr: "SS", boxArt: "box-art/15-SS.jpg", titleArt: "title-art/15-SS.jpg",
+      releases: [{ year: 2011, system: "Wii" }, { year: 2021, system: "Switch HD" }] },
+    { name: "A Link Between Worlds", abbr: "ALBW", boxArt: "box-art/16-ALBW.jpg", titleArt: "title-art/16-ALBW.jpg",
+      releases: [{ year: 2013, system: "3DS" }] },
+    { name: "Breath of the Wild", abbr: "BotW", boxArt: "box-art/17-BotW.jpg", titleArt: "title-art/17-BotW.jpg",
+      releases: [{ year: 2017, system: "Switch/Wii U" }] },
+    { name: "Tears of the Kingdom", abbr: "TotK", boxArt: "box-art/18-TotK.jpg", titleArt: "title-art/18-TotK.jpg",
+      releases: [{ year: 2023, system: "Switch" }] },
+    { name: "Echoes of Wisdom", abbr: "EoW", boxArt: "box-art/19-EoW.jpg", titleArt: "title-art/19-EoW.jpg",
+      releases: [{ year: 2024, system: "Switch" }] },
   ];
 
   const features = [
@@ -32,7 +53,7 @@ const ZeldaFeatureGrid = () => {
     { name: "Instrument", key: "instrument", category: "items", emoji: "🪉" },
     { name: "Moblins", key: "moblins", category: "enemies", emoji: "🧌" },
     { name: "Monster Parts", key: "monsterParts", category: "enemies", emoji: "🫁" },
-    { name: "Flying Tiles", key: "flyingTiles", category: "enemies", emoji: "🟫" },
+    { name: "Flying Tiles", key: "flyingTiles", category: "enemies", emoji: "🧱" },
     { name: "Shadow Link", key: "shadowLink", category: "enemies", emoji: "👤" },
     { name: "Lynels", key: "lynels", category: "enemies", emoji: "🦁" },
     { name: "Cooking", key: "cooking", category: "mechanics", emoji: "🍳" },
@@ -106,44 +127,85 @@ const ZeldaFeatureGrid = () => {
     return Object.values(featureData).filter(game => game[featureKey]).length;
   };
 
-  // Render game row label with box art (left) and title art (right)
-  const GameLabel = ({ game }) => {
-    const imgStyle = {
-      borderRadius: '3px',
-      boxShadow: '0 1px 3px rgba(0,0,0,0.4)',
-      objectFit: 'cover',
-    };
+  // Custom tooltip state
+  const [tooltip, setTooltip] = useState({ visible: false, game: null, x: 0, y: 0 });
+
+  const showTooltip = (e, game) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setTooltip({
+      visible: true,
+      game,
+      x: rect.right + 8,
+      y: rect.top + rect.height / 2,
+    });
+  };
+
+  const hideTooltip = () => {
+    setTooltip({ ...tooltip, visible: false });
+  };
+
+  // Tooltip component
+  const GameTooltip = () => {
+    if (!tooltip.visible || !tooltip.game) return null;
+    const game = tooltip.game;
     
     return (
-      <div className="flex items-center gap-1.5" title={`${game.name} (${game.year})`}>
-        {/* Box Art - left */}
-        <img 
-          src={game.boxArt}
-          alt={`${game.name} box`}
-          style={{ 
-            ...imgStyle,
-            width: '32px', 
-            height: '44px',
-          }}
-        />
-        {/* Title Art - right */}
-        <img 
-          src={game.titleArt}
-          alt={`${game.name} logo`}
-          style={{ 
-            ...imgStyle,
-            width: '56px', 
-            height: '32px',
-            objectFit: 'contain',
-            background: 'rgba(0,0,0,0.2)',
-          }}
-        />
+      <div 
+        className="fixed z-50 pointer-events-none"
+        style={{ 
+          left: `${tooltip.x}px`, 
+          top: `${tooltip.y}px`,
+          transform: 'translateY(-50%)',
+        }}
+      >
+        <div className="bg-gray-900/95 border border-emerald-700 rounded-lg shadow-xl p-3 flex gap-3 backdrop-blur-sm">
+          {/* Box Art */}
+          <img 
+            src={game.boxArt}
+            alt={`${game.name} box`}
+            className="rounded shadow-md"
+            style={{ width: '80px', height: '110px', objectFit: 'cover' }}
+          />
+          {/* Info */}
+          <div className="flex flex-col justify-center min-w-[140px]">
+            <div className="text-amber-300 font-bold text-sm mb-2">{game.name}</div>
+            <div className="space-y-1">
+              {game.releases.map((rel, i) => (
+                <div key={i} className="flex items-center gap-2 text-xs">
+                  <span className="text-emerald-400 font-mono w-10">{rel.year}</span>
+                  <span className="text-gray-300">{rel.system}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     );
   };
 
+  // Render game row label with title art only + custom tooltip
+  const GameLabel = ({ game }) => (
+    <div 
+      className="cursor-pointer"
+      onMouseEnter={(e) => showTooltip(e, game)}
+      onMouseLeave={hideTooltip}
+    >
+      <img 
+        src={game.titleArt}
+        alt={game.name}
+        className="rounded"
+        style={{ 
+          width: '88px', 
+          height: '36px',
+          objectFit: 'contain',
+        }}
+      />
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 p-3 font-sans">
+      <GameTooltip />
       <h1 className="text-xl font-bold text-amber-300 mb-1 text-center">
         The Legend of Zelda: Feature Timeline
       </h1>
@@ -207,7 +269,7 @@ const ZeldaFeatureGrid = () => {
               return (
                 <tr key={gameIdx} className="hover:brightness-125 transition-all">
                   <td 
-                    className="sticky left-0 z-10 p-1 text-emerald-100 border-r border-green-700"
+                    className="sticky left-0 z-10 px-1 py-0.5 text-emerald-100 border-r border-green-700"
                     style={{ backgroundColor: isEvenRow ? 'rgba(0,0,0,0.25)' : 'rgba(0,0,0,0.1)' }}
                   >
                     <GameLabel game={game} />
