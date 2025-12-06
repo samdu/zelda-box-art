@@ -1,24 +1,24 @@
 const ZeldaFeatureGrid = () => {
   const games = [
-    { name: "The Legend of Zelda", year: 1986, abbr: "LoZ", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/1986-LoZ-Legend_of_Zelda.png" },
-    { name: "Zelda II: Adventure of Link", year: 1987, abbr: "AoL", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/1987-AoL-Adventure_of_Link.jpg" },
-    { name: "A Link to the Past", year: 1991, abbr: "ALttP", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/1991-ALttP-Link_to_the_Past.jpg" },
-    { name: "Link's Awakening", year: 1993, abbr: "LA", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/1993-LA-Links_Awakening.png" },
-    { name: "Ocarina of Time", year: 1998, abbr: "OoT", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/1998-OoT-Ocarina_of_Time.jpg" },
-    { name: "Majora's Mask", year: 2000, abbr: "MM", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2000-MM-Majoras_Mask.jpg" },
-    { name: "Oracle of Seasons", year: 2001, abbr: "OoS", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2001-Oracle_Games.jpg" },
-    { name: "Oracle of Ages", year: 2001, abbr: "OoA", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2001-Oracle_Games.jpg" },
-    { name: "The Wind Waker", year: 2002, abbr: "WW", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2002-WW-Wind_Waker.jpg" },
-    { name: "Four Swords Adventures", year: 2004, abbr: "FSA", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2004-FSA-Four_Swords_Adventures.jpg" },
-    { name: "The Minish Cap", year: 2004, abbr: "MC", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2004-MC-Minish_Cap.jpg" },
-    { name: "Twilight Princess", year: 2006, abbr: "TP", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2006-TP-Twilight_Princess.jpg" },
-    { name: "Phantom Hourglass", year: 2007, abbr: "PH", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2007-PH-Phantom_Hourglass.jpg" },
-    { name: "Spirit Tracks", year: 2009, abbr: "ST", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2009-ST-Spirit_Tracks.jpg" },
-    { name: "Skyward Sword", year: 2011, abbr: "SS", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2011-SS-Skyward_Sword.png" },
-    { name: "A Link Between Worlds", year: 2013, abbr: "ALBW", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2013-ALBW-Link_Between_Worlds.jpg" },
-    { name: "Breath of the Wild", year: 2017, abbr: "BotW", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2017-BotW-Breath_of_the_Wild.jpg" },
-    { name: "Tears of the Kingdom", year: 2023, abbr: "TotK", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2023-TotK-Tears_of_the_Kingdom.jpg" },
-    { name: "Echoes of Wisdom", year: 2024, abbr: "EoW", boxArt: "https://raw.githubusercontent.com/samdu/zelda-box-art/main/2024-EoW-Echoes_of_Wisdom.jpg" },
+    { name: "The Legend of Zelda", year: 1986, abbr: "LoZ", boxArt: "https://upload.wikimedia.org/wikipedia/en/4/41/Legend_of_zelda_cover_%28with_samples%29_gold.png" },
+    { name: "Zelda II: Adventure of Link", year: 1987, abbr: "AoL", boxArt: "https://upload.wikimedia.org/wikipedia/en/2/22/Zelda_II_The_Adventure_of_Link_box.jpg" },
+    { name: "A Link to the Past", year: 1991, abbr: "ALttP", boxArt: "03-ALttP.jpg" },
+    { name: "Link's Awakening", year: 1993, abbr: "LA", boxArt: "https://upload.wikimedia.org/wikipedia/en/a/a1/Link%27s_Awakening.png" },
+    { name: "Ocarina of Time", year: 1998, abbr: "OoT", boxArt: "05-OoT.jpg" },
+    { name: "Majora's Mask", year: 2000, abbr: "MM", boxArt: "06-MM.jpg" },
+    { name: "Oracle of Seasons", year: 2001, abbr: "OoS", boxArt: "https://upload.wikimedia.org/wikipedia/en/c/c7/The_Legend_of_Zelda_Oracle_of_Seasons_and_Oracle_of_Ages_Game_Cover.jpg" },
+    { name: "Oracle of Ages", year: 2001, abbr: "OoA", boxArt: "https://upload.wikimedia.org/wikipedia/en/c/c7/The_Legend_of_Zelda_Oracle_of_Seasons_and_Oracle_of_Ages_Game_Cover.jpg" },
+    { name: "The Wind Waker", year: 2002, abbr: "WW", boxArt: "https://upload.wikimedia.org/wikipedia/en/1/14/The_Legend_of_Zelda_The_Wind_Waker.jpg" },
+    { name: "Four Swords Adventures", year: 2004, abbr: "FSA", boxArt: "https://upload.wikimedia.org/wikipedia/en/b/bc/The_Legend_of_Zelda_Four_Swords_Adventures_Game_Cover.jpg" },
+    { name: "The Minish Cap", year: 2004, abbr: "MC", boxArt: "https://upload.wikimedia.org/wikipedia/en/a/a5/The_Legend_of_Zelda_The_Minish_Cap_Game_Cover.jpg" },
+    { name: "Twilight Princess", year: 2006, abbr: "TP", boxArt: "https://upload.wikimedia.org/wikipedia/en/6/68/The_Legend_of_Zelda_Twilight_Princess_Game_Cover.jpg" },
+    { name: "Phantom Hourglass", year: 2007, abbr: "PH", boxArt: "https://upload.wikimedia.org/wikipedia/en/c/c9/The_Legend_of_Zelda_Phantom_Hourglass_Game_Cover.jpg" },
+    { name: "Spirit Tracks", year: 2009, abbr: "ST", boxArt: "https://upload.wikimedia.org/wikipedia/en/b/be/The_Legend_of_Zelda_Spirit_Tracks_box_art.jpg" },
+    { name: "Skyward Sword", year: 2011, abbr: "SS", boxArt: "https://upload.wikimedia.org/wikipedia/en/0/09/The_Legend_of_Zelda_Skyward_Sword_Boxart.png" },
+    { name: "A Link Between Worlds", year: 2013, abbr: "ALBW", boxArt: "https://upload.wikimedia.org/wikipedia/en/6/6e/The_Legend_of_Zelda_A_Link_Between_Worlds_NA_cover.jpg" },
+    { name: "Breath of the Wild", year: 2017, abbr: "BotW", boxArt: "16-BotW.jpg" },
+    { name: "Tears of the Kingdom", year: 2023, abbr: "TotK", boxArt: "17-TotK.jpg" },
+    { name: "Echoes of Wisdom", year: 2024, abbr: "EoW", boxArt: "https://upload.wikimedia.org/wikipedia/en/1/1d/The_Legend_of_Zelda_Echoes_of_Wisdom_cover.jpg" },
   ];
 
   const features = [
@@ -172,9 +172,7 @@ const ZeldaFeatureGrid = () => {
                         src={game.boxArt} 
                         alt={game.name}
                         className="w-8 h-10 object-cover rounded shadow-md"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                        }}
+                        style={{ minWidth: '32px', backgroundColor: '#1a1a1a' }}
                       />
                       <div className="flex flex-col">
                         <span className="text-amber-400 font-mono text-xs">{game.year}</span>
