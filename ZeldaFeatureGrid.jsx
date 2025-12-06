@@ -140,7 +140,23 @@ const ZeldaFeatureGrid = () => {
   };
 
   const hideTooltip = () => {
-    setTooltip({ ...tooltip, visible: false });
+    setTooltip(prev => ({ ...prev, visible: false, game: null }));
+  };
+
+  const toggleTooltip = (e, game) => {
+    e.stopPropagation();
+    setTooltip(prev => {
+      if (prev.visible && prev.game?.abbr === game.abbr) {
+        return { ...prev, visible: false, game: null };
+      }
+      const rect = e.currentTarget.getBoundingClientRect();
+      return {
+        visible: true,
+        game,
+        x: rect.right + 8,
+        y: rect.top + rect.height / 2,
+      };
+    });
   };
 
   // Tooltip component
@@ -157,16 +173,22 @@ const ZeldaFeatureGrid = () => {
           transform: 'translateY(-50%)',
         }}
       >
-        <div className="bg-gray-900/95 border border-emerald-700 rounded-lg shadow-xl p-3 flex gap-3 backdrop-blur-sm">
-          {/* Box Art */}
-          <img 
-            src={game.boxArt}
-            alt={`${game.name} box`}
-            className="rounded shadow-md"
-            style={{ width: '80px', height: '110px', objectFit: 'cover' }}
-          />
+        <div className="bg-gray-900/95 border border-emerald-700 rounded-lg shadow-xl p-3 flex gap-4 backdrop-blur-sm">
+          {/* Box Art - supports portrait, landscape, and square */}
+          <div className="flex items-center justify-center" style={{ width: '140px', height: '160px' }}>
+            <img 
+              src={game.boxArt}
+              alt={`${game.name} box`}
+              className="rounded shadow-md"
+              style={{ 
+                maxWidth: '140px', 
+                maxHeight: '160px', 
+                objectFit: 'contain',
+              }}
+            />
+          </div>
           {/* Info */}
-          <div className="flex flex-col justify-center min-w-[140px]">
+          <div className="flex flex-col justify-center min-w-[150px]">
             <div className="text-amber-300 font-bold text-sm mb-2">{game.name}</div>
             <div className="space-y-1">
               {game.releases.map((rel, i) => (
@@ -188,6 +210,7 @@ const ZeldaFeatureGrid = () => {
       className="cursor-pointer inline-block"
       onMouseEnter={(e) => showTooltip(e, game)}
       onMouseLeave={hideTooltip}
+      onClick={(e) => toggleTooltip(e, game)}
     >
       <img 
         src={game.titleArt}
@@ -203,7 +226,10 @@ const ZeldaFeatureGrid = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 p-3 font-sans">
+    <div 
+      className="min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 p-3 font-sans"
+      onClick={hideTooltip}
+    >
       <GameTooltip />
       <h1 className="text-xl font-bold text-amber-300 mb-1 text-center">
         The Legend of Zelda: Feature Timeline
