@@ -1,27 +1,26 @@
 const ZeldaFeatureGrid = () => {
-  // Games with their box art info
-  // isWide: true for NES/SNES/GB era horizontal box art
-  // hasImage: true if we have a local copy
+  // Games with their box art and title art
+  // boxArt: retail box cover, titleArt: game logo
   const games = [
-    { name: "The Legend of Zelda", year: 1986, abbr: "LoZ", isWide: true, hasImage: false, color: "#c4a000" },
-    { name: "Zelda II: Adventure of Link", year: 1987, abbr: "AoL", isWide: true, hasImage: false, color: "#8b0000" },
-    { name: "A Link to the Past", year: 1991, abbr: "ALttP", isWide: true, hasImage: true, file: "03-ALttP.jpg", color: "#4a0080" },
-    { name: "Link's Awakening", year: 1993, abbr: "LA", isWide: true, hasImage: false, color: "#006400" },
-    { name: "Ocarina of Time", year: 1998, abbr: "OoT", isWide: false, hasImage: true, file: "05-OoT.jpg", color: "#1a5c1a" },
-    { name: "Majora's Mask", year: 2000, abbr: "MM", isWide: false, hasImage: true, file: "06-MM.jpg", color: "#4b0082" },
-    { name: "Oracle of Seasons", year: 2001, abbr: "OoS", isWide: true, hasImage: false, color: "#ff6600" },
-    { name: "Oracle of Ages", year: 2001, abbr: "OoA", isWide: true, hasImage: false, color: "#0066cc" },
-    { name: "The Wind Waker", year: 2002, abbr: "WW", isWide: false, hasImage: false, color: "#0099cc" },
-    { name: "Four Swords Adventures", year: 2004, abbr: "FSA", isWide: false, hasImage: false, color: "#660099" },
-    { name: "The Minish Cap", year: 2004, abbr: "MC", isWide: false, hasImage: false, color: "#339933" },
-    { name: "Twilight Princess", year: 2006, abbr: "TP", isWide: false, hasImage: false, color: "#2d4a2d" },
-    { name: "Phantom Hourglass", year: 2007, abbr: "PH", isWide: false, hasImage: false, color: "#336699" },
-    { name: "Spirit Tracks", year: 2009, abbr: "ST", isWide: false, hasImage: false, color: "#cc6600" },
-    { name: "Skyward Sword", year: 2011, abbr: "SS", isWide: false, hasImage: false, color: "#6699cc" },
-    { name: "A Link Between Worlds", year: 2013, abbr: "ALBW", isWide: false, hasImage: false, color: "#993366" },
-    { name: "Breath of the Wild", year: 2017, abbr: "BotW", isWide: false, hasImage: true, file: "16-BotW.jpg", color: "#2d5a27" },
-    { name: "Tears of the Kingdom", year: 2023, abbr: "TotK", isWide: false, hasImage: true, file: "17-TotK.jpg", color: "#1a4a3a" },
-    { name: "Echoes of Wisdom", year: 2024, abbr: "EoW", isWide: false, hasImage: false, color: "#cc9900" },
+    { name: "The Legend of Zelda", year: 1986, abbr: "LoZ", boxArt: "box-art/01-LoZ.png", titleArt: "title-art/01-LoZ.jpg" },
+    { name: "Zelda II: Adventure of Link", year: 1987, abbr: "AoL", boxArt: "box-art/02-AoL.png", titleArt: "title-art/02-AoL.jpg" },
+    { name: "A Link to the Past", year: 1991, abbr: "ALttP", boxArt: "box-art/03-ALttP.jpg", titleArt: "title-art/03-ALttP.jpg" },
+    { name: "Link's Awakening", year: 1993, abbr: "LA", boxArt: "box-art/04-LA.png", titleArt: "title-art/04-LA.jpg" },
+    { name: "Ocarina of Time", year: 1998, abbr: "OoT", boxArt: "box-art/05-OoT.jpg", titleArt: "title-art/05-OoT.jpg" },
+    { name: "Majora's Mask", year: 2000, abbr: "MM", boxArt: "box-art/06-MM.png", titleArt: "title-art/06-MM.jpg" },
+    { name: "Oracle of Seasons", year: 2001, abbr: "OoS", boxArt: "box-art/07-OoS.jpg", titleArt: "title-art/07-OoS.jpg" },
+    { name: "Oracle of Ages", year: 2001, abbr: "OoA", boxArt: "box-art/08-OoA.png", titleArt: "title-art/08-OoA.jpg" },
+    { name: "The Wind Waker", year: 2002, abbr: "WW", boxArt: "box-art/09-WW.png", titleArt: "title-art/09-WW.jpg" },
+    { name: "Four Swords Adventures", year: 2004, abbr: "FSA", boxArt: "box-art/10-FSA.jpg", titleArt: "title-art/10-FSA.jpg" },
+    { name: "The Minish Cap", year: 2004, abbr: "MC", boxArt: "box-art/11-MC.jpg", titleArt: "title-art/11-MC.jpg" },
+    { name: "Twilight Princess", year: 2006, abbr: "TP", boxArt: "box-art/12-TP.png", titleArt: "title-art/12-TP.jpg" },
+    { name: "Phantom Hourglass", year: 2007, abbr: "PH", boxArt: "box-art/13-PH.jpg", titleArt: "title-art/13-PH.jpg" },
+    { name: "Spirit Tracks", year: 2009, abbr: "ST", boxArt: "box-art/14-ST.jpg", titleArt: "title-art/14-ST.jpg" },
+    { name: "Skyward Sword", year: 2011, abbr: "SS", boxArt: "box-art/15-SS.png", titleArt: "title-art/15-SS.jpg" },
+    { name: "A Link Between Worlds", year: 2013, abbr: "ALBW", boxArt: "box-art/16-ALBW.png", titleArt: "title-art/16-ALBW.jpg" },
+    { name: "Breath of the Wild", year: 2017, abbr: "BotW", boxArt: "box-art/17-BotW.png", titleArt: "title-art/17-BotW.jpg" },
+    { name: "Tears of the Kingdom", year: 2023, abbr: "TotK", boxArt: "box-art/18-TotK.png", titleArt: "title-art/18-TotK.jpg" },
+    { name: "Echoes of Wisdom", year: 2024, abbr: "EoW", boxArt: "box-art/19-EoW.jpg", titleArt: "title-art/19-EoW.jpg" },
   ];
 
   const features = [
@@ -30,10 +29,10 @@ const ZeldaFeatureGrid = () => {
     { name: "Boomerang", key: "boomerang", category: "items", emoji: "🪃" },
     { name: "Bow", key: "bow", category: "items", emoji: "🏹" },
     { name: "Bombs", key: "bombs", category: "items", emoji: "💣" },
-    { name: "Instrument", key: "instrument", category: "items", emoji: "🎵" },
+    { name: "Instrument", key: "instrument", category: "items", emoji: "🪉" },
     { name: "Moblins", key: "moblins", category: "enemies", emoji: "🧌" },
     { name: "Monster Parts", key: "monsterParts", category: "enemies", emoji: "🫁" },
-    { name: "Flying Tiles", key: "flyingTiles", category: "enemies", emoji: "🀫" },
+    { name: "Flying Tiles", key: "flyingTiles", category: "enemies", emoji: "🟫" },
     { name: "Shadow Link", key: "shadowLink", category: "enemies", emoji: "👤" },
     { name: "Lynels", key: "lynels", category: "enemies", emoji: "🦁" },
     { name: "Cooking", key: "cooking", category: "mechanics", emoji: "🍳" },
@@ -107,49 +106,38 @@ const ZeldaFeatureGrid = () => {
     return Object.values(featureData).filter(game => game[featureKey]).length;
   };
 
-  // Render box art or placeholder
-  const BoxArt = ({ game }) => {
-    const baseStyle = {
-      borderRadius: '4px',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      overflow: 'hidden',
+  // Render game row label with box art (left) and title art (right)
+  const GameLabel = ({ game }) => {
+    const imgStyle = {
+      borderRadius: '3px',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.4)',
+      objectFit: 'cover',
     };
     
-    // Wide (landscape) for early games, tall (portrait) for later
-    const width = game.isWide ? 48 : 32;
-    const height = game.isWide ? 32 : 40;
-    
-    if (game.hasImage) {
-      return (
+    return (
+      <div className="flex items-center gap-1.5" title={`${game.name} (${game.year})`}>
+        {/* Box Art - left */}
         <img 
-          src={game.file}
-          alt={game.name}
+          src={game.boxArt}
+          alt={`${game.name} box`}
           style={{ 
-            ...baseStyle,
-            width: `${width}px`, 
-            height: `${height}px`,
-            objectFit: 'cover',
+            ...imgStyle,
+            width: '32px', 
+            height: '44px',
           }}
         />
-      );
-    }
-    
-    // Colored placeholder with abbreviation
-    return (
-      <div style={{
-        ...baseStyle,
-        width: `${width}px`,
-        height: `${height}px`,
-        backgroundColor: game.color,
-        fontSize: '9px',
-        fontWeight: 'bold',
-        color: 'rgba(255,255,255,0.9)',
-        textShadow: '0 1px 2px rgba(0,0,0,0.5)',
-      }}>
-        {game.abbr}
+        {/* Title Art - right */}
+        <img 
+          src={game.titleArt}
+          alt={`${game.name} logo`}
+          style={{ 
+            ...imgStyle,
+            width: '56px', 
+            height: '32px',
+            objectFit: 'contain',
+            background: 'rgba(0,0,0,0.2)',
+          }}
+        />
       </div>
     );
   };
@@ -183,7 +171,7 @@ const ZeldaFeatureGrid = () => {
         <table className="w-full border-collapse text-xs rounded" style={{ marginTop: '70px' }}>
           <thead>
             <tr>
-              <th className="sticky left-0 bg-green-900 z-10 p-1.5 text-left text-amber-300 font-bold min-w-[120px] border-b border-green-600">
+              <th className="sticky left-0 bg-green-900 z-10 p-1.5 text-left text-amber-300 font-bold min-w-[100px] border-b border-green-600">
                 Game
               </th>
               {features.map((feature, idx) => (
@@ -222,13 +210,7 @@ const ZeldaFeatureGrid = () => {
                     className="sticky left-0 z-10 p-1 text-emerald-100 border-r border-green-700"
                     style={{ backgroundColor: isEvenRow ? 'rgba(0,0,0,0.25)' : 'rgba(0,0,0,0.1)' }}
                   >
-                    <div className="flex items-center gap-2">
-                      <BoxArt game={game} />
-                      <div className="flex flex-col">
-                        <span className="text-amber-400 font-mono text-xs">{game.year}</span>
-                        <span className="text-xs text-emerald-200">{game.abbr}</span>
-                      </div>
-                    </div>
+                    <GameLabel game={game} />
                   </td>
                   {features.map((feature, featureIdx) => {
                     const hasFeature = featureData[game.abbr]?.[feature.key];
