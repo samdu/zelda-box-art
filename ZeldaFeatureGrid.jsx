@@ -1,24 +1,27 @@
 const ZeldaFeatureGrid = () => {
+  // Games with their box art info
+  // isWide: true for NES/SNES/GB era horizontal box art
+  // hasImage: true if we have a local copy
   const games = [
-    { name: "The Legend of Zelda", year: 1986, abbr: "LoZ", boxArt: "https://upload.wikimedia.org/wikipedia/en/4/41/Legend_of_zelda_cover_%28with_samples%29_gold.png" },
-    { name: "Zelda II: Adventure of Link", year: 1987, abbr: "AoL", boxArt: "https://upload.wikimedia.org/wikipedia/en/2/22/Zelda_II_The_Adventure_of_Link_box.jpg" },
-    { name: "A Link to the Past", year: 1991, abbr: "ALttP", boxArt: "03-ALttP.jpg" },
-    { name: "Link's Awakening", year: 1993, abbr: "LA", boxArt: "https://upload.wikimedia.org/wikipedia/en/a/a1/Link%27s_Awakening.png" },
-    { name: "Ocarina of Time", year: 1998, abbr: "OoT", boxArt: "05-OoT.jpg" },
-    { name: "Majora's Mask", year: 2000, abbr: "MM", boxArt: "06-MM.jpg" },
-    { name: "Oracle of Seasons", year: 2001, abbr: "OoS", boxArt: "https://upload.wikimedia.org/wikipedia/en/c/c7/The_Legend_of_Zelda_Oracle_of_Seasons_and_Oracle_of_Ages_Game_Cover.jpg" },
-    { name: "Oracle of Ages", year: 2001, abbr: "OoA", boxArt: "https://upload.wikimedia.org/wikipedia/en/c/c7/The_Legend_of_Zelda_Oracle_of_Seasons_and_Oracle_of_Ages_Game_Cover.jpg" },
-    { name: "The Wind Waker", year: 2002, abbr: "WW", boxArt: "https://upload.wikimedia.org/wikipedia/en/1/14/The_Legend_of_Zelda_The_Wind_Waker.jpg" },
-    { name: "Four Swords Adventures", year: 2004, abbr: "FSA", boxArt: "https://upload.wikimedia.org/wikipedia/en/b/bc/The_Legend_of_Zelda_Four_Swords_Adventures_Game_Cover.jpg" },
-    { name: "The Minish Cap", year: 2004, abbr: "MC", boxArt: "https://upload.wikimedia.org/wikipedia/en/a/a5/The_Legend_of_Zelda_The_Minish_Cap_Game_Cover.jpg" },
-    { name: "Twilight Princess", year: 2006, abbr: "TP", boxArt: "https://upload.wikimedia.org/wikipedia/en/6/68/The_Legend_of_Zelda_Twilight_Princess_Game_Cover.jpg" },
-    { name: "Phantom Hourglass", year: 2007, abbr: "PH", boxArt: "https://upload.wikimedia.org/wikipedia/en/c/c9/The_Legend_of_Zelda_Phantom_Hourglass_Game_Cover.jpg" },
-    { name: "Spirit Tracks", year: 2009, abbr: "ST", boxArt: "https://upload.wikimedia.org/wikipedia/en/b/be/The_Legend_of_Zelda_Spirit_Tracks_box_art.jpg" },
-    { name: "Skyward Sword", year: 2011, abbr: "SS", boxArt: "https://upload.wikimedia.org/wikipedia/en/0/09/The_Legend_of_Zelda_Skyward_Sword_Boxart.png" },
-    { name: "A Link Between Worlds", year: 2013, abbr: "ALBW", boxArt: "https://upload.wikimedia.org/wikipedia/en/6/6e/The_Legend_of_Zelda_A_Link_Between_Worlds_NA_cover.jpg" },
-    { name: "Breath of the Wild", year: 2017, abbr: "BotW", boxArt: "16-BotW.jpg" },
-    { name: "Tears of the Kingdom", year: 2023, abbr: "TotK", boxArt: "17-TotK.jpg" },
-    { name: "Echoes of Wisdom", year: 2024, abbr: "EoW", boxArt: "https://upload.wikimedia.org/wikipedia/en/1/1d/The_Legend_of_Zelda_Echoes_of_Wisdom_cover.jpg" },
+    { name: "The Legend of Zelda", year: 1986, abbr: "LoZ", isWide: true, hasImage: false, color: "#c4a000" },
+    { name: "Zelda II: Adventure of Link", year: 1987, abbr: "AoL", isWide: true, hasImage: false, color: "#8b0000" },
+    { name: "A Link to the Past", year: 1991, abbr: "ALttP", isWide: true, hasImage: true, file: "03-ALttP.jpg", color: "#4a0080" },
+    { name: "Link's Awakening", year: 1993, abbr: "LA", isWide: true, hasImage: false, color: "#006400" },
+    { name: "Ocarina of Time", year: 1998, abbr: "OoT", isWide: false, hasImage: true, file: "05-OoT.jpg", color: "#1a5c1a" },
+    { name: "Majora's Mask", year: 2000, abbr: "MM", isWide: false, hasImage: true, file: "06-MM.jpg", color: "#4b0082" },
+    { name: "Oracle of Seasons", year: 2001, abbr: "OoS", isWide: true, hasImage: false, color: "#ff6600" },
+    { name: "Oracle of Ages", year: 2001, abbr: "OoA", isWide: true, hasImage: false, color: "#0066cc" },
+    { name: "The Wind Waker", year: 2002, abbr: "WW", isWide: false, hasImage: false, color: "#0099cc" },
+    { name: "Four Swords Adventures", year: 2004, abbr: "FSA", isWide: false, hasImage: false, color: "#660099" },
+    { name: "The Minish Cap", year: 2004, abbr: "MC", isWide: false, hasImage: false, color: "#339933" },
+    { name: "Twilight Princess", year: 2006, abbr: "TP", isWide: false, hasImage: false, color: "#2d4a2d" },
+    { name: "Phantom Hourglass", year: 2007, abbr: "PH", isWide: false, hasImage: false, color: "#336699" },
+    { name: "Spirit Tracks", year: 2009, abbr: "ST", isWide: false, hasImage: false, color: "#cc6600" },
+    { name: "Skyward Sword", year: 2011, abbr: "SS", isWide: false, hasImage: false, color: "#6699cc" },
+    { name: "A Link Between Worlds", year: 2013, abbr: "ALBW", isWide: false, hasImage: false, color: "#993366" },
+    { name: "Breath of the Wild", year: 2017, abbr: "BotW", isWide: false, hasImage: true, file: "16-BotW.jpg", color: "#2d5a27" },
+    { name: "Tears of the Kingdom", year: 2023, abbr: "TotK", isWide: false, hasImage: true, file: "17-TotK.jpg", color: "#1a4a3a" },
+    { name: "Echoes of Wisdom", year: 2024, abbr: "EoW", isWide: false, hasImage: false, color: "#cc9900" },
   ];
 
   const features = [
@@ -99,6 +102,53 @@ const ZeldaFeatureGrid = () => {
     return Object.values(featureData).filter(game => game[featureKey]).length;
   };
 
+  // Render box art or placeholder
+  const BoxArt = ({ game }) => {
+    const baseStyle = {
+      borderRadius: '4px',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.3)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      overflow: 'hidden',
+    };
+    
+    // Wide (landscape) for early games, tall (portrait) for later
+    const width = game.isWide ? 48 : 32;
+    const height = game.isWide ? 32 : 40;
+    
+    if (game.hasImage) {
+      return (
+        <img 
+          src={game.file}
+          alt={game.name}
+          style={{ 
+            ...baseStyle,
+            width: `${width}px`, 
+            height: `${height}px`,
+            objectFit: 'cover',
+          }}
+        />
+      );
+    }
+    
+    // Colored placeholder with abbreviation
+    return (
+      <div style={{
+        ...baseStyle,
+        width: `${width}px`,
+        height: `${height}px`,
+        backgroundColor: game.color,
+        fontSize: '9px',
+        fontWeight: 'bold',
+        color: 'rgba(255,255,255,0.9)',
+        textShadow: '0 1px 2px rgba(0,0,0,0.5)',
+      }}>
+        {game.abbr}
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 p-3 font-sans">
       <h1 className="text-xl font-bold text-amber-300 mb-1 text-center">
@@ -128,7 +178,7 @@ const ZeldaFeatureGrid = () => {
         <table className="w-full border-collapse text-xs rounded" style={{ marginTop: '70px' }}>
           <thead>
             <tr>
-              <th className="sticky left-0 bg-green-900 z-10 p-1.5 text-left text-amber-300 font-bold min-w-[100px] border-b border-green-600">
+              <th className="sticky left-0 bg-green-900 z-10 p-1.5 text-left text-amber-300 font-bold min-w-[120px] border-b border-green-600">
                 Game
               </th>
               {features.map((feature, idx) => (
@@ -168,12 +218,7 @@ const ZeldaFeatureGrid = () => {
                     style={{ backgroundColor: isEvenRow ? 'rgba(0,0,0,0.25)' : 'rgba(0,0,0,0.1)' }}
                   >
                     <div className="flex items-center gap-2">
-                      <img 
-                        src={game.boxArt} 
-                        alt={game.name}
-                        className="w-8 h-10 object-cover rounded shadow-md"
-                        style={{ minWidth: '32px', backgroundColor: '#1a1a1a' }}
-                      />
+                      <BoxArt game={game} />
                       <div className="flex flex-col">
                         <span className="text-amber-400 font-mono text-xs">{game.year}</span>
                         <span className="text-xs text-emerald-200">{game.abbr}</span>
