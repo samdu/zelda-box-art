@@ -1,6 +1,5 @@
-import { useState } from 'react';
-
 const ZeldaFeatureGrid = () => {
+  const { useState } = React;
   // Games with box art, title art, and release info
   // releases: array of { year, system } - original + remakes/remasters only (no Virtual Console)
   const games = [
@@ -8,13 +7,13 @@ const ZeldaFeatureGrid = () => {
       releases: [{ year: 1986, system: "NES" }] },
     { name: "Zelda II: The Adventure of Link", abbr: "AoL", boxArt: "box-art/02-AoL.jpg", titleArt: "title-art/02-AoL.jpg",
       releases: [{ year: 1987, system: "NES" }] },
-    { name: "A Link to the Past", abbr: "ALttP", boxArt: "box-art/03-ALttP.jpg", titleArt: "title-art/03-ALttP.jpg",
+    { name: "A Link to the Past", abbr: "ALttP", boxArt: "box-art/03-ALttP.jpg", titleArt: "title-art/03-ALttP.png",
       releases: [{ year: 1991, system: "SNES" }, { year: 2002, system: "GBA" }] },
     { name: "Link's Awakening", abbr: "LA", boxArt: "box-art/04-LA.jpg", titleArt: "title-art/04-LA.jpg",
       releases: [{ year: 1993, system: "Game Boy" }, { year: 1998, system: "GBC (DX)" }, { year: 2019, system: "Switch" }] },
-    { name: "Ocarina of Time", abbr: "OoT", boxArt: "box-art/05-OoT.jpg", titleArt: "title-art/05-OoT.jpg",
+    { name: "Ocarina of Time", abbr: "OoT", boxArt: "box-art/05-OoT.jpg", titleArt: "title-art/05-OoT.png",
       releases: [{ year: 1998, system: "N64" }, { year: 2011, system: "3DS" }] },
-    { name: "Majora's Mask", abbr: "MM", boxArt: "box-art/06-MM.jpg", titleArt: "title-art/06-MM.jpg",
+    { name: "Majora's Mask", abbr: "MM", boxArt: "box-art/06-MM.jpg", titleArt: "title-art/06-MM.png",
       releases: [{ year: 2000, system: "N64" }, { year: 2015, system: "3DS" }] },
     { name: "Oracle of Seasons", abbr: "OoS", boxArt: "box-art/07-OoS.jpg", titleArt: "title-art/07-OoS.jpg",
       releases: [{ year: 2001, system: "GBC" }] },
@@ -36,11 +35,11 @@ const ZeldaFeatureGrid = () => {
       releases: [{ year: 2011, system: "Wii" }, { year: 2021, system: "Switch HD" }] },
     { name: "A Link Between Worlds", abbr: "ALBW", boxArt: "box-art/16-ALBW.jpg", titleArt: "title-art/16-ALBW.jpg",
       releases: [{ year: 2013, system: "3DS" }] },
-    { name: "Breath of the Wild", abbr: "BotW", boxArt: "box-art/17-BotW.jpg", titleArt: "title-art/17-BotW.jpg",
+    { name: "Breath of the Wild", abbr: "BotW", boxArt: "box-art/17-BotW.jpg", titleArt: "title-art/17-BotW.png",
       releases: [{ year: 2017, system: "Switch/Wii U" }] },
-    { name: "Tears of the Kingdom", abbr: "TotK", boxArt: "box-art/18-TotK.jpg", titleArt: "title-art/18-TotK.jpg",
+    { name: "Tears of the Kingdom", abbr: "TotK", boxArt: "box-art/18-TotK.jpg", titleArt: "title-art/18-TotK.png",
       releases: [{ year: 2023, system: "Switch" }] },
-    { name: "Echoes of Wisdom", abbr: "EoW", boxArt: "box-art/19-EoW.jpg", titleArt: "title-art/19-EoW.jpg",
+    { name: "Echoes of Wisdom", abbr: "EoW", boxArt: "box-art/19-EoW.jpg", titleArt: "title-art/19-EoW.png",
       releases: [{ year: 2024, system: "Switch" }] },
   ];
 
