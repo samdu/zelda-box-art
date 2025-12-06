@@ -30,8 +30,12 @@ const ZeldaFeatureGrid = () => {
     { name: "Boomerang", key: "boomerang", category: "items", emoji: "🪃" },
     { name: "Bow", key: "bow", category: "items", emoji: "🏹" },
     { name: "Bombs", key: "bombs", category: "items", emoji: "💣" },
+    { name: "Instrument", key: "instrument", category: "items", emoji: "🎵" },
     { name: "Moblins", key: "moblins", category: "enemies", emoji: "🧌" },
     { name: "Monster Parts", key: "monsterParts", category: "enemies", emoji: "🫁" },
+    { name: "Flying Tiles", key: "flyingTiles", category: "enemies", emoji: "🀫" },
+    { name: "Shadow Link", key: "shadowLink", category: "enemies", emoji: "👤" },
+    { name: "Lynels", key: "lynels", category: "enemies", emoji: "🦁" },
     { name: "Cooking", key: "cooking", category: "mechanics", emoji: "🍳" },
     { name: "Horse", key: "horse", category: "mechanics", emoji: "🐴" },
     { name: "Fishing", key: "fishing", category: "mechanics", emoji: "🎣" },
@@ -42,6 +46,7 @@ const ZeldaFeatureGrid = () => {
     { name: "Gerudo", key: "gerudo", category: "races", emoji: "🏜️" },
     { name: "Gorons", key: "gorons", category: "races", emoji: "🌋" },
     { name: "Zora", key: "zora", category: "races", emoji: "🧜🏽" },
+    { name: "Koroks", key: "koroks", category: "races", emoji: "🌱" },
   ];
 
   const categoryStyles = {
@@ -72,25 +77,25 @@ const ZeldaFeatureGrid = () => {
   };
 
   const featureData = {
-    "LoZ": { hookshot: false, hammer: false, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: false, zora: true, sleeping: false, fairyBottles: false, dungeons: true },
-    "AoL": { hookshot: false, hammer: true, boomerang: false, bow: false, bombs: false, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: false, zora: false, sleeping: true, fairyBottles: false, dungeons: true },
-    "ALttP": { hookshot: true, hammer: true, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: false, zora: true, sleeping: false, fairyBottles: true, dungeons: true },
-    "LA": { hookshot: true, hammer: false, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: true, questChain: true, gerudo: false, gorons: false, zora: false, sleeping: false, fairyBottles: true, dungeons: true },
-    "OoT": { hookshot: true, hammer: true, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: true, fishing: true, questChain: true, gerudo: true, gorons: true, zora: true, sleeping: false, fairyBottles: true, dungeons: true },
-    "MM": { hookshot: true, hammer: false, boomerang: false, bow: true, bombs: true, moblins: false, monsterParts: false, cooking: false, horse: true, fishing: true, questChain: true, gerudo: true, gorons: true, zora: true, sleeping: true, fairyBottles: true, dungeons: true },
-    "OoS": { hookshot: false, hammer: false, boomerang: true, bow: false, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: true, sleeping: true, fairyBottles: true, dungeons: true },
-    "OoA": { hookshot: true, hammer: false, boomerang: false, bow: false, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: true, sleeping: true, fairyBottles: true, dungeons: true },
-    "WW": { hookshot: true, hammer: true, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: false, sleeping: false, fairyBottles: true, dungeons: true },
-    "FSA": { hookshot: false, hammer: true, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: true, gorons: false, zora: true, sleeping: false, fairyBottles: true, dungeons: true },
-    "MC": { hookshot: false, hammer: false, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: false, sleeping: false, fairyBottles: true, dungeons: true },
-    "TP": { hookshot: true, hammer: true, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: true, fishing: true, questChain: true, gerudo: true, gorons: true, zora: true, sleeping: false, fairyBottles: true, dungeons: true },
-    "PH": { hookshot: false, hammer: true, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: true, questChain: true, gerudo: false, gorons: true, zora: false, sleeping: false, fairyBottles: true, dungeons: true },
-    "ST": { hookshot: false, hammer: false, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: false, sleeping: false, fairyBottles: true, dungeons: true },
-    "SS": { hookshot: true, hammer: false, boomerang: false, bow: true, bombs: true, moblins: true, monsterParts: true, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: false, sleeping: true, fairyBottles: true, dungeons: true },
-    "ALBW": { hookshot: true, hammer: true, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: false, zora: true, sleeping: false, fairyBottles: true, dungeons: true },
-    "BotW": { hookshot: false, hammer: true, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: true, cooking: true, horse: true, fishing: false, questChain: true, gerudo: true, gorons: true, zora: true, sleeping: true, fairyBottles: true, dungeons: true },
-    "TotK": { hookshot: false, hammer: true, boomerang: true, bow: true, bombs: true, moblins: true, monsterParts: true, cooking: true, horse: true, fishing: false, questChain: true, gerudo: true, gorons: true, zora: true, sleeping: true, fairyBottles: true, dungeons: true },
-    "EoW": { hookshot: false, hammer: false, boomerang: false, bow: false, bombs: true, moblins: true, monsterParts: true, cooking: false, horse: true, fishing: true, questChain: true, gerudo: true, gorons: true, zora: true, sleeping: true, fairyBottles: true, dungeons: true },
+    "LoZ": { hookshot: false, hammer: false, boomerang: true, bow: true, bombs: true, instrument: true, moblins: true, monsterParts: false, flyingTiles: false, shadowLink: false, lynels: true, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: false, zora: true, koroks: false, sleeping: false, fairyBottles: false, dungeons: true },
+    "AoL": { hookshot: false, hammer: true, boomerang: false, bow: false, bombs: false, instrument: true, moblins: true, monsterParts: false, flyingTiles: false, shadowLink: true, lynels: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: false, zora: false, koroks: false, sleeping: true, fairyBottles: false, dungeons: true },
+    "ALttP": { hookshot: true, hammer: true, boomerang: true, bow: true, bombs: true, instrument: true, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: true, lynels: true, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: false, zora: true, koroks: false, sleeping: false, fairyBottles: true, dungeons: true },
+    "LA": { hookshot: true, hammer: false, boomerang: true, bow: true, bombs: true, instrument: true, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: true, lynels: false, cooking: false, horse: false, fishing: true, questChain: true, gerudo: false, gorons: false, zora: false, koroks: false, sleeping: false, fairyBottles: true, dungeons: true },
+    "OoT": { hookshot: true, hammer: true, boomerang: true, bow: true, bombs: true, instrument: true, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: true, lynels: false, cooking: false, horse: true, fishing: true, questChain: true, gerudo: true, gorons: true, zora: true, koroks: false, sleeping: false, fairyBottles: true, dungeons: true },
+    "MM": { hookshot: true, hammer: false, boomerang: false, bow: true, bombs: true, instrument: true, moblins: false, monsterParts: false, flyingTiles: true, shadowLink: false, lynels: false, cooking: false, horse: true, fishing: true, questChain: true, gerudo: true, gorons: true, zora: true, koroks: false, sleeping: true, fairyBottles: true, dungeons: true },
+    "OoS": { hookshot: false, hammer: false, boomerang: true, bow: false, bombs: true, instrument: false, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: false, lynels: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: true, koroks: false, sleeping: true, fairyBottles: true, dungeons: true },
+    "OoA": { hookshot: true, hammer: false, boomerang: false, bow: false, bombs: true, instrument: true, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: true, lynels: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: true, koroks: false, sleeping: true, fairyBottles: true, dungeons: true },
+    "WW": { hookshot: true, hammer: true, boomerang: true, bow: true, bombs: true, instrument: true, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: false, lynels: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: false, koroks: true, sleeping: false, fairyBottles: true, dungeons: true },
+    "FSA": { hookshot: false, hammer: true, boomerang: true, bow: true, bombs: true, instrument: false, moblins: true, monsterParts: false, flyingTiles: false, shadowLink: true, lynels: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: true, gorons: false, zora: true, koroks: false, sleeping: false, fairyBottles: true, dungeons: true },
+    "MC": { hookshot: false, hammer: false, boomerang: true, bow: true, bombs: true, instrument: true, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: false, lynels: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: false, koroks: false, sleeping: false, fairyBottles: true, dungeons: true },
+    "TP": { hookshot: true, hammer: true, boomerang: true, bow: true, bombs: true, instrument: true, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: true, lynels: false, cooking: false, horse: true, fishing: true, questChain: true, gerudo: true, gorons: true, zora: true, koroks: false, sleeping: false, fairyBottles: true, dungeons: true },
+    "PH": { hookshot: false, hammer: true, boomerang: true, bow: true, bombs: true, instrument: false, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: false, lynels: false, cooking: false, horse: false, fishing: true, questChain: true, gerudo: false, gorons: true, zora: false, koroks: false, sleeping: false, fairyBottles: true, dungeons: true },
+    "ST": { hookshot: false, hammer: false, boomerang: true, bow: true, bombs: true, instrument: true, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: false, lynels: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: false, koroks: false, sleeping: false, fairyBottles: true, dungeons: true },
+    "SS": { hookshot: true, hammer: false, boomerang: false, bow: true, bombs: true, instrument: true, moblins: true, monsterParts: true, flyingTiles: true, shadowLink: false, lynels: false, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: true, zora: false, koroks: false, sleeping: true, fairyBottles: true, dungeons: true },
+    "ALBW": { hookshot: true, hammer: true, boomerang: true, bow: true, bombs: true, instrument: false, moblins: true, monsterParts: false, flyingTiles: true, shadowLink: true, lynels: true, cooking: false, horse: false, fishing: false, questChain: true, gerudo: false, gorons: false, zora: true, koroks: false, sleeping: false, fairyBottles: true, dungeons: true },
+    "BotW": { hookshot: false, hammer: true, boomerang: true, bow: true, bombs: true, instrument: false, moblins: true, monsterParts: true, flyingTiles: false, shadowLink: false, lynels: true, cooking: true, horse: true, fishing: false, questChain: true, gerudo: true, gorons: true, zora: true, koroks: true, sleeping: true, fairyBottles: true, dungeons: true },
+    "TotK": { hookshot: false, hammer: true, boomerang: true, bow: true, bombs: true, instrument: false, moblins: true, monsterParts: true, flyingTiles: false, shadowLink: false, lynels: true, cooking: true, horse: true, fishing: false, questChain: true, gerudo: true, gorons: true, zora: true, koroks: true, sleeping: true, fairyBottles: true, dungeons: true },
+    "EoW": { hookshot: false, hammer: false, boomerang: false, bow: false, bombs: true, instrument: false, moblins: true, monsterParts: true, flyingTiles: false, shadowLink: false, lynels: true, cooking: false, horse: true, fishing: true, questChain: true, gerudo: true, gorons: true, zora: true, koroks: true, sleeping: true, fairyBottles: true, dungeons: true },
   };
 
   const getFeatureCount = (gameAbbr) => {
@@ -280,7 +285,7 @@ const ZeldaFeatureGrid = () => {
           <span className="text-sky-300">Rarest:</span> 🍳 Cooking (2 games)
         </span>
         <span className="bg-black/30 rounded px-2 py-1">
-          <span className="text-purple-300">Most features:</span> OoT, TP (15)
+          <span className="text-purple-300">Most features:</span> OoT, TP (17)
         </span>
       </div>
     </div>
